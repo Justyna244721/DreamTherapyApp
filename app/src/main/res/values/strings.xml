@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">DreamTherapyApp</string>
-    <string name="err_msg_enter_login">Wprowadź email</string>
-    <string name="err_msg_enter_password">Wprowadź hasło</string>
-    <string name="err_msg_enter_reppassword">Potwierdź hasło</string>
-    <string name="err_msg_password_mismatch">Błędne hasło</string>
+    <string name="err_msg_enter_name">Enter your name</string>
+    <string name="err_msg_enter_surname">Enter your surname</string>
+    <string name="err_msg_enter_emal">Enter your email</string>
+    <string name="err_msg_enter_password">Enter password</string>
+    <string name="err_msg_enter_reppassword">Confirm password</string>
+    <string name="err_msg_password_mismatch">Wrong password</string>
+    <string name="err_msg_age">Enter your age</string>
+    <string name="err_msg_access_code">Enter your access code</string>
+    <string name="err_msg_mismatch_access_code">Wrong access code</string>
 </resources>
