@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/edTvEmailMainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/edTvPasswordMainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.937" />
 
     <Button
-        android:id="@+id/LogIn"
+        android:id="@+id/btnLogInMainActivity"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
 
@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/SignIn"
+        android:id="@+id/btnSignInMainActivity"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/custombutton"
@@ -101,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LogIn"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogInMainActivity"
         app:layout_constraintVertical_bias="0.242" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

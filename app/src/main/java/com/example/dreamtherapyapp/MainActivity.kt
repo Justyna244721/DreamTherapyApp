@@ -7,17 +7,17 @@ import android.view.View
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
-    private var LogIn: Button?=null
+    private var ButtonLogIn: Button?=null
     private var Signin: Button?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        LogIn = findViewById(R.id.LogIn)
-        Signin= findViewById(R.id.SignIn)
+        ButtonLogIn = findViewById(R.id.btnLogInMainActivity)
+        Signin= findViewById(R.id.btnSignInMainActivity)
 
         //przycisk do strony Menu
-        LogIn?.setOnClickListener(object : View.OnClickListener{
+        ButtonLogIn?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
                 openMenu()
             }
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
     //Przejście do strony Głównej
     private fun openMenu(){
-        val intent= Intent(this,Menu::class.java)
+        val intent= Intent(this,StronaGlowna::class.java)
         startActivity(intent)
     }
     //Przejscie do strony z Rejestracją

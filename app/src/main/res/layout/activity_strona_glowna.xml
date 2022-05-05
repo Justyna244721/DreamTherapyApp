@@ -5,30 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradientbackground"
-    tools:context=".Menu">
-
+    tools:context=".StronaGlowna">
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imgBtnFormStronaGlowna"
         android:layout_width="181dp"
         android:layout_height="136dp"
         android:layout_marginBottom="83dp"
-        android:background="?android:attributionsAreUserVisible"
+        android:background="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnProgressStronaGlowna"
         app:srcCompat="@drawable/ic_ankieta"
         tools:ignore="SpeakableTextPresentCheck"
         tools:targetApi="s" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imgBtnProgressStronaGlowna"
         android:layout_width="184dp"
         android:layout_height="127dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="65dp"
-        android:background="?android:attributionsAreUserVisible"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtnFormStronaGlowna"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,11 +54,19 @@
             android:layout_height="wrap_content" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imgMoonView"
             android:layout_width="wrap_content"
             android:layout_height="255dp"
             app:srcCompat="@drawable/moon"
             tools:ignore="ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/imgBtnbackFromStronaGlowna"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:srcCompat="@drawable/ic_cofanie"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </FrameLayout>
 
@@ -72,7 +79,7 @@
         android:fontFamily="@font/russo_one"
         android:text="PROGRESS"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtnProgressStronaGlowna"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
@@ -86,9 +93,9 @@
         android:fontFamily="@font/russo_one"
         android:text="FORM"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtnFormStronaGlowna"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnProgressStronaGlowna" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

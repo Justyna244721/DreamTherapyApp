@@ -6,15 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 
-class SignIn : AppCompatActivity() {
-
-    private var btnSaveSignIn : Button ?= null
-
+class StronaGlowna : AppCompatActivity() {
+    private var imgBtnbackFromStronaGlowna : Button?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
-        btnSaveSignIn = findViewById(R.id.btnSaveSignIn)
-        btnSaveSignIn?.setOnClickListener(object : View.OnClickListener{
+        setContentView(R.layout.activity_strona_glowna)
+        imgBtnbackFromStronaGlowna = findViewById(R.id.btnSaveSignIn)
+        imgBtnbackFromStronaGlowna?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
                 openMainActivity()
             }

@@ -49,30 +49,31 @@
         app:layout_constraintTop_toBottomOf="@+id/tableRow">
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/edTvNameSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="@font/russo_one"
             android:foregroundGravity="center"
             android:gravity="center"
+            android:hint="Name"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="Name" />
+            android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/edTvSurnameSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="@font/russo_one"
             android:gravity="center"
+            android:hint="Surname"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Surname" />
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/edTvEmailSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -83,7 +84,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/editTextTextPassword4"
+            android:id="@+id/edTvPasswordSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -94,7 +95,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/editTextTextPassword5"
+            android:id="@+id/edTvReapetPasswordSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -105,7 +106,7 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/editTextNumberPassword3"
+            android:id="@+id/edTvAccessCodeSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -117,7 +118,7 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/edTvAgeSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -127,16 +128,16 @@
             android:inputType="number"
             android:minHeight="48dp" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName5"
+        <TextView
+            android:id="@+id/tvSexSignIn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:ems="10"
             android:fontFamily="@font/russo_one"
-            android:gravity="center"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="Sex" />
+            android:gravity="center|center_horizontal"
+            android:minHeight="48px"
+            android:text="Sex"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -172,7 +173,7 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnSaveSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custombutton"
