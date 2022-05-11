@@ -7,6 +7,12 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.ktx.Firebase
+
 
 class SignIn : InformacjaRejestracyjna(){
 
@@ -20,24 +26,30 @@ class SignIn : InformacjaRejestracyjna(){
     private var edTvAgeSignIn: EditText?=null
     private var accessCode : String ?= "1234"
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+
         btnSaveSignIn = findViewById(R.id.btnSaveSignIn)
+        edTvNameSignIn=findViewById(R.id.edTvNameSignIn)
+        edTvSurnameSignIn=findViewById(R.id.edTvSurnameSignIn)
+        edTvEmailSignIn=findViewById(R.id.edTvEmailSignIn)
+        edTvPasswordSignIn=findViewById(R.id.edTvPasswordSignIn)
+        edTvReapetPasswordSignIn=findViewById(R.id.edTvReapetPasswordSignIn)
+        edTvAccessCodeSignIn=findViewById(R.id.edTvAccessCodeSignIn)
+        edTvAgeSignIn=findViewById(R.id.edTvAgeSignIn)
+
         btnSaveSignIn?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
-                openMainActivity()
-                edTvNameSignIn=findViewById(R.id.edTvNameSignIn)
-                edTvSurnameSignIn=findViewById(R.id.edTvSurnameSignIn)
-                edTvEmailSignIn=findViewById(R.id.edTvEmailSignIn)
-                edTvPasswordSignIn=findViewById(R.id.edTvPasswordSignIn)
-                edTvReapetPasswordSignIn=findViewById(R.id.edTvReapetPasswordSignIn)
-                edTvAccessCodeSignIn=findViewById(R.id.edTvAccessCodeSignIn)
-                edTvAgeSignIn=findViewById(R.id.edTvAgeSignIn)
-
+                registerUser()
 
             }
         })
+    }
+    private fun openMenu(){
+        val intent= Intent(this,StronaGlowna::class.java)
+        startActivity(intent)
     }
 
     private fun openMainActivity(){
@@ -92,13 +104,13 @@ class SignIn : InformacjaRejestracyjna(){
         if (validateRegisterDetails()){
             val login: String = edTvEmailSignIn?.text.toString().trim() {it <= ' '}
             val password: String = edTvPasswordSignIn?.text.toString().trim() {it <= ' '}
-            /*
+
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(login,password).addOnCompleteListener(
                 OnCompleteListener <AuthResult>{ task ->
                     if(task.isSuccessful){
                         val firebaseUser: FirebaseUser = task.result!!.user!!
                         showErrorSnackBar("You are registered successfully. Your user id is ${firebaseUser.uid}",false)
-                        openStronaGlowna()
+                        openMenu()
 
                     } else{
                         showErrorSnackBar(task.exception!!.message.toString(),true)
@@ -106,7 +118,7 @@ class SignIn : InformacjaRejestracyjna(){
                 }
             )
 
-             */
+
         }
     }
 }
