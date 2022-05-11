@@ -88,4 +88,25 @@ class SignIn : InformacjaRejestracyjna(){
             }
         }
     }
+    private fun registerUser(){
+        if (validateRegisterDetails()){
+            val login: String = edTvEmailSignIn?.text.toString().trim() {it <= ' '}
+            val password: String = edTvPasswordSignIn?.text.toString().trim() {it <= ' '}
+            /*
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(login,password).addOnCompleteListener(
+                OnCompleteListener <AuthResult>{ task ->
+                    if(task.isSuccessful){
+                        val firebaseUser: FirebaseUser = task.result!!.user!!
+                        showErrorSnackBar("You are registered successfully. Your user id is ${firebaseUser.uid}",false)
+                        openStronaGlowna()
+
+                    } else{
+                        showErrorSnackBar(task.exception!!.message.toString(),true)
+                    }
+                }
+            )
+
+             */
+        }
+    }
 }
