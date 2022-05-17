@@ -3,10 +3,12 @@ package com.example.dreamtherapyapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.TextUtils
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -100,6 +102,8 @@ class SignIn : InformacjaRejestracyjna(){
             }
         }
     }
+
+
     private fun registerUser(){
         if (validateRegisterDetails()){
             val login: String = edTvEmailSignIn?.text.toString().trim() {it <= ' '}
@@ -109,16 +113,41 @@ class SignIn : InformacjaRejestracyjna(){
                 OnCompleteListener <AuthResult>{ task ->
                     if(task.isSuccessful){
                         val firebaseUser: FirebaseUser = task.result!!.user!!
-                        showErrorSnackBar("You are registered successfully. Your user id is ${firebaseUser.uid}",false)
-                        openMenu()
+
+                        val user = User(
+                            firebaseUser.uid,
+
+                            edTvNameSignIn?.text.toString().trim() {it <= ' '},
+                            edTvSurnameSignIn?.text.toString().trim() {it <= ' '},
+                            edTvEmailSignIn?.text.toString().trim() {it <= ' '},
+                            edTvAgeSignIn?.text.toString().trim() {it <= ' '},
+                            )
+
+
+                        FireStoreClass().registerUser(this,user)
+
+                        showErrorSnackBar("Twoja rejestracja przebiegła pomyślnie.",false)
+                        //FirebaseAuth.getInstance().signOut()
+
+
+
 
                     } else{
                         showErrorSnackBar(task.exception!!.message.toString(),true)
                     }
+                    if(task.isSuccessful){
+                        Handler().postDelayed({openMenu()},1000)
+                    }
                 }
             )
-
-
         }
+    }
+
+    fun userRegistrationSuccess() {
+        Toast.makeText(
+            this@SignIn,
+            resources.getString(R.string.register_success),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }
