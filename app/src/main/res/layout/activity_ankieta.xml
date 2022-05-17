@@ -7,4 +7,91 @@
     android:background="@drawable/gradientbackground"
     tools:context=".Ankieta">
 
+    <Button
+        android:id="@+id/btnSaveAnkieta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="410dp"
+        android:layout_height="518dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/tvQuestion1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Q1. How long did you sleep today?"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edTvOdpowedz1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Answer 1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvQuestion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Q2. Did you drink alcohol?"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edTvOdpowedz2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Answer 2"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvQuestion3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Q3. Did you take any sleep drugs?"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edTvOdpowedz3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Answer 3"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvQuestion4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Q4. Do you feel tired?"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edTvOdpowedz4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Answer 4"
+            android:textSize="20sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
