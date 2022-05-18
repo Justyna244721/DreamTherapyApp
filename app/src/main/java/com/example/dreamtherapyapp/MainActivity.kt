@@ -109,6 +109,7 @@ class MainActivity : InformacjaRejestracyjna() {
         Log.i("Nazwisko: ", user.edTvSurnameSignIn)
         Log.i("Email: ", user.edTvEmailSignIn)
         Log.i("Wiek: ", user.edTvAgeSignIn)
+        Log.i("Płeć: ", user.plec)
 
         goToMainActivity()
         finish()

@@ -28,8 +28,9 @@ class SignIn : InformacjaRejestracyjna(){
     private var edTvAccessCodeSignIn: EditText?=null
     private var edTvAgeSignIn: EditText?=null
     private var accessCode : String ?= "1234"
-    private var checkBox3: CheckBox?=null
-    private var checkBox4: CheckBox?=null
+    lateinit var checkBox3: CheckBox
+    lateinit var checkBox4: CheckBox
+    lateinit var plec: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +45,7 @@ class SignIn : InformacjaRejestracyjna(){
         edTvAccessCodeSignIn=findViewById(R.id.edTvAccessCodeSignIn)
         edTvAgeSignIn=findViewById(R.id.edTvAgeSignIn)
         checkBox3=findViewById(R.id.checkBox3)
-        checkBox3=findViewById(R.id.checkBox4)
+        checkBox4=findViewById(R.id.checkBox4)
 
         btnSaveSignIn?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
@@ -52,6 +53,35 @@ class SignIn : InformacjaRejestracyjna(){
 
             }
         })
+        checkBox3?.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                if (checkBox3.isChecked()) {
+                    checkBox4.setEnabled(false)
+                    Toast.makeText(
+                        this@SignIn,
+                        resources.getString(R.string.anserw_success),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    plec="kobieta"
+                }
+            }
+        })
+
+        checkBox4?.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                if (checkBox4.isChecked()) {
+                    checkBox3.setEnabled(false)
+                    Toast.makeText(
+                        this@SignIn,
+                        resources.getString(R.string.anserw_success),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    plec="mężczyzna"
+                }
+            }
+        })
+
+
     }
     private fun openMenu(){
         val intent= Intent(this,StronaGlowna::class.java)
@@ -125,6 +155,8 @@ class SignIn : InformacjaRejestracyjna(){
                             edTvSurnameSignIn?.text.toString().trim() {it <= ' '},
                             edTvEmailSignIn?.text.toString().trim() {it <= ' '},
                             edTvAgeSignIn?.text.toString().trim() {it <= ' '},
+                            plec
+
                             )
 
 

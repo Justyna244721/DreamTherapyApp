@@ -10,5 +10,6 @@
     <string name="err_msg_access_code">Enter your access code</string>
     <string name="err_msg_mismatch_access_code">Wrong access code</string>
     <string name="register_success" >Register success</string>
+    <string name="anserw_success" > Answer added success</string>
 
 </resources>
