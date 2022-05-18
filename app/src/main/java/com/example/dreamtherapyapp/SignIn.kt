@@ -7,6 +7,7 @@ import android.os.Handler
 import android.text.TextUtils
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
@@ -27,7 +28,8 @@ class SignIn : InformacjaRejestracyjna(){
     private var edTvAccessCodeSignIn: EditText?=null
     private var edTvAgeSignIn: EditText?=null
     private var accessCode : String ?= "1234"
-
+    private var checkBox3: CheckBox?=null
+    private var checkBox4: CheckBox?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +43,8 @@ class SignIn : InformacjaRejestracyjna(){
         edTvReapetPasswordSignIn=findViewById(R.id.edTvReapetPasswordSignIn)
         edTvAccessCodeSignIn=findViewById(R.id.edTvAccessCodeSignIn)
         edTvAgeSignIn=findViewById(R.id.edTvAgeSignIn)
+        checkBox3=findViewById(R.id.checkBox3)
+        checkBox3=findViewById(R.id.checkBox4)
 
         btnSaveSignIn?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
