@@ -1,15 +1,33 @@
 package com.example.dreamtherapyapp
 
 import android.app.Activity
+import android.content.ContentValues.TAG
 import android.util.Log
+import android.view.View
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 
 
 class FireStoreClass {
     private val mFireStore = FirebaseFirestore.getInstance()
+    private val data= FirebaseDatabase.getInstance()
+    private var dataBaseReference= data.getReference()
 
+    fun addDatafromForm(activity: Ankieta,dana:String){
+
+
+        mFireStore.collection(Constans.USERS).add(dana).addOnSuccessListener {
+
+            activity.userAddDaraSuccess()
+        }
+            .addOnFailureListener { exceotion->
+                Log.w(TAG,"PROBLEM Z DODANIEM DOKUMENTU")
+            }
+    }
     fun registerUser(activity: SignIn, userInfo: User) {
         //mFireStore.collection("users")
         mFireStore.collection(Constans.USERS)

@@ -5,6 +5,8 @@ class User (val id: String = "",
             val edTvSurnameSignIn: String="",
             val edTvEmailSignIn: String="",
             val edTvAgeSignIn: String="",
-            val plec: String=""
+            val plec: String="",
+            val SleepDrugs: String="",
+            val alcohol: String=""
 
 )

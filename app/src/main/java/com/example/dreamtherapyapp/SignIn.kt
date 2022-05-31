@@ -31,7 +31,8 @@ class SignIn : InformacjaRejestracyjna(){
     lateinit var checkBox3: CheckBox
     lateinit var checkBox4: CheckBox
     lateinit var plec: String
-
+    lateinit var SleepDrugs: String
+    lateinit var alcohol: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
@@ -155,7 +156,10 @@ class SignIn : InformacjaRejestracyjna(){
                             edTvSurnameSignIn?.text.toString().trim() {it <= ' '},
                             edTvEmailSignIn?.text.toString().trim() {it <= ' '},
                             edTvAgeSignIn?.text.toString().trim() {it <= ' '},
-                            plec
+                            plec,
+                            SleepDrugs,
+                            alcohol
+
 
                             )
 
