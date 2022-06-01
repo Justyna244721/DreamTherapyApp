@@ -157,8 +157,6 @@ class SignIn : InformacjaRejestracyjna(){
                             edTvEmailSignIn?.text.toString().trim() {it <= ' '},
                             edTvAgeSignIn?.text.toString().trim() {it <= ' '},
                             plec,
-                            SleepDrugs,
-                            alcohol
 
 
                             )

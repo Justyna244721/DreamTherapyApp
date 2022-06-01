@@ -17,12 +17,13 @@ class FireStoreClass {
     private val data= FirebaseDatabase.getInstance()
     private var dataBaseReference= data.getReference()
 
-    fun addDatafromForm(activity: Ankieta,dana:String){
+    fun addDatafromForm(activity: Ankieta, dana:String){
 
 
-        mFireStore.collection(Constans.USERS).add(dana).addOnSuccessListener {
+        mFireStore.collection(Constans.USERS).document(getCurrentUserID()).update("Ankieta ",dana)
+            .addOnSuccessListener {
 
-            activity.userAddDaraSuccess()
+            activity.userAddDataSuccess()
         }
             .addOnFailureListener { exceotion->
                 Log.w(TAG,"PROBLEM Z DODANIEM DOKUMENTU")

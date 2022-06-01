@@ -40,7 +40,7 @@ class Ankieta : AppCompatActivity() {
 
 
 
-
+        var ankieta= ""
 
         cBoxYesAnkietaQ2?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
@@ -51,8 +51,9 @@ class Ankieta : AppCompatActivity() {
                         resources.getString(R.string.anserw_success),
                         Toast.LENGTH_SHORT
                     ).show()
-                    alcohol="Alcohol comsumption. Date: $data"
-
+                    alcohol="Yes. Date: $data"
+                    ankieta="Sleep drug consumptiona $SleepDrugs and alcohol consumption $alcohol"
+                    updateData(ankieta)
                 }
             }
         })
@@ -66,6 +67,9 @@ class Ankieta : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     alcohol="No. Date: $data"
+                    ankieta="Sleep drug consumptiona $SleepDrugs and alcohol consumption $alcohol"
+                    updateData(ankieta)
+
                 }
             }
         })
@@ -80,7 +84,9 @@ class Ankieta : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                SleepDrugs="Sleep drug comsumption. Date: $data"
+                SleepDrugs="Yes. Date: $data"
+                ankieta="Sleep drug consumptiona $SleepDrugs and alcohol consumption $alcohol"
+                updateData(ankieta)
             }
         })
         cBoxNoAnkietaQ3?.setOnClickListener(object : View.OnClickListener{
@@ -93,21 +99,27 @@ class Ankieta : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+                val mFireStore = FirebaseFirestore.getInstance()
                 SleepDrugs="No.Date: $data"
-
+                ankieta="Sleep drug consumptiona $SleepDrugs and alcohol consumption $alcohol"
+                updateData(ankieta)
 
             }
 
         })
 
 
+
     }
-    fun userAddDaraSuccess() {
+    fun userAddDataSuccess() {
         Toast.makeText(
             this@Ankieta,
             resources.getString(R.string.addData_success),
             Toast.LENGTH_SHORT
         ).show()
+    }
+    private fun updateData(ankieta:String) {
+        FireStoreClass().addDatafromForm(this,ankieta)
     }
 
 }

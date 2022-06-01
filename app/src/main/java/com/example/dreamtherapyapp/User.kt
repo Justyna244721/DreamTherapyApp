@@ -6,7 +6,7 @@ class User (val id: String = "",
             val edTvEmailSignIn: String="",
             val edTvAgeSignIn: String="",
             val plec: String="",
-            val SleepDrugs: String="",
-            val alcohol: String=""
+            val Ankieta: String=""
+
 
 )
